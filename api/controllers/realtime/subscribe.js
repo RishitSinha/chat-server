@@ -14,9 +14,9 @@ module.exports = {
       return this.res.badRequest("This was not a socket connection.");
     }
 
-    sails.sockets.join(this.req, user.id);
+    sails.sockets.join(this.req, inputs.name);
 
-    sails.sockets.broadcast(user.id, "hello", `hey ${user.name}`);
+    sails.sockets.broadcast(inputs.name, "hello", `hey ${inputs.name}`);
 
     return;
   },
